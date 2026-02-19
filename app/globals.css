@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-dark-text bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .nav-link-glow {
+    @apply relative font-heading font-semibold text-sm tracking-wide uppercase transition-all duration-300;
+    color: #4a5568;
+  }
+
+  .nav-link-glow:hover {
+    color: #0C2E66;
+    text-shadow:
+      0 0 8px rgba(12, 46, 102, 0.35),
+      0 0 20px rgba(12, 46, 102, 0.15);
+  }
+
+  .nav-link-glow::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link-glow:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-accent text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent/90 shadow-lg;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 163, 177, 0.35);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 border-2 border-primary text-primary font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-primary text-white;
+    transform: translateY(-2px);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #0C2E66 0%, #1C75BC 100%);
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to bottom, rgba(12, 46, 102, 0.6), rgba(12, 46, 102, 0.85));
+  }
+}
