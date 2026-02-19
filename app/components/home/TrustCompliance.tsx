@@ -26,7 +26,7 @@ export function TrustCompliance() {
   return (
     <section className="section-padding bg-white">
       <div className="max-w-7xl mx-auto">
-        <ScrollReveal direction="left">
+        <ScrollReveal direction="up">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-heading font-extrabold text-3xl md:text-4xl uppercase tracking-wide text-primary mb-4">
               Why Choose Elliot Electrical
@@ -42,10 +42,10 @@ export function TrustCompliance() {
           {trustItems.map((item, i) => (
             <ScrollReveal
               key={item.title}
-              direction={i % 2 === 0 ? "left" : "right"}
+              direction="up"
               delay={i * 150}
             >
-              <div className="text-center p-8 rounded-2xl bg-light-grey border border-gray-100">
+              <div className="text-center h-full p-8 rounded-2xl bg-light-grey border border-gray-100">
                 <div className="w-20 h-20 rounded-2xl gradient-primary flex items-center justify-center text-white mx-auto mb-6">
                   {item.icon}
                 </div>

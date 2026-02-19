@@ -19,6 +19,7 @@ export function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -38,6 +39,16 @@ export function ScrollReveal({
     return () => observer.disconnect();
   }, [threshold]);
 
+  useEffect(() => {
+    if (!isVisible) return;
+    if (delay === 0) {
+      setShouldAnimate(true);
+      return;
+    }
+    const timer = setTimeout(() => setShouldAnimate(true), delay);
+    return () => clearTimeout(timer);
+  }, [isVisible, delay]);
+
   const animationClass = {
     left: "animate-slide-in-left",
     right: "animate-slide-in-right",
@@ -48,8 +59,7 @@ export function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={`${isVisible ? animationClass : "opacity-0"} ${className}`}
-      style={{ animationDelay: `${delay}ms` }}
+      className={`${shouldAnimate ? animationClass : "opacity-0"} ${className}`}
     >
       {children}
     </div>

@@ -30,10 +30,10 @@ export function Navbar() {
             <Image
               src="/elliot-logo.png"
               alt="Elliot Electrical"
-              width={180}
-              height={60}
+              width={320}
+              height={100}
               className={`transition-all duration-300 ${
-                isScrolled ? "h-10 w-auto" : "h-14 w-auto"
+                isScrolled ? "h-16 w-auto" : "h-28 w-auto"
               }`}
               priority
             />

@@ -43,12 +43,12 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="gradient-primary py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="gradient-primary py-16 md:py-24 flex items-center justify-center">
+        <div className="w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center">
           <h1 className="font-heading font-extrabold text-3xl md:text-5xl uppercase tracking-wide text-white mb-4">
             Our Services
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl">
             Professional electrical solutions for residential, commercial and
             industrial needs across Gauteng and the Garden Route.
           </p>
@@ -62,8 +62,8 @@ export default function ServicesPage() {
             {services.map((service, i) => (
               <ScrollReveal
                 key={service.slug}
-                direction={i % 2 === 0 ? "left" : "right"}
-                delay={i * 80}
+                direction="up"
+                delay={i * 150}
               >
                 <Link
                   href={`/services/${service.slug}`}

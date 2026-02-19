@@ -20,22 +20,22 @@ const config: Config = {
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
-        "slide-in-left": "slideInLeft 0.7s ease-out forwards",
-        "slide-in-right": "slideInRight 0.7s ease-out forwards",
-        "fade-up": "fadeUp 0.6s ease-out forwards",
-        "fade-in": "fadeIn 0.5s ease-out forwards",
+        "slide-in-left": "slideInLeft 1s cubic-bezier(0.22,1,0.36,1) forwards",
+        "slide-in-right": "slideInRight 1s cubic-bezier(0.22,1,0.36,1) forwards",
+        "fade-up": "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards",
+        "fade-in": "fadeIn 0.8s cubic-bezier(0.22,1,0.36,1) forwards",
       },
       keyframes: {
         slideInLeft: {
-          from: { opacity: "0", transform: "translateX(-60px)" },
+          from: { opacity: "0", transform: "translateX(-40px)" },
           to: { opacity: "1", transform: "translateX(0)" },
         },
         slideInRight: {
-          from: { opacity: "0", transform: "translateX(60px)" },
+          from: { opacity: "0", transform: "translateX(40px)" },
           to: { opacity: "1", transform: "translateX(0)" },
         },
         fadeUp: {
-          from: { opacity: "0", transform: "translateY(30px)" },
+          from: { opacity: "0", transform: "translateY(24px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {

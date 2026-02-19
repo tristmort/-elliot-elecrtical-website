@@ -51,7 +51,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${inter.variable} font-body antialiased`}
       >
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="pt-40">{children}</main>
         <Footer />
       </body>
     </html>

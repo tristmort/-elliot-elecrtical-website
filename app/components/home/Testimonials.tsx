@@ -20,13 +20,13 @@ export function Testimonials() {
         </ScrollReveal>
 
         <ScrollReveal direction="left" delay={200}>
-          <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
-            {testimonials.map((t) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {testimonials.slice(0, 6).map((t) => (
               <div
                 key={t.id}
-                className="flex-shrink-0 w-80 sm:w-96 p-8 rounded-2xl bg-light-grey border border-gray-100 snap-center"
+                className="p-8 rounded-2xl bg-light-grey border border-gray-100 text-center"
               >
-                <Quote size={24} className="text-accent/40 mb-4" />
+                <Quote size={24} className="text-accent/40 mb-4 mx-auto" />
                 <p className="text-dark-text text-sm leading-relaxed mb-6">
                   &ldquo;{t.text}&rdquo;
                 </p>

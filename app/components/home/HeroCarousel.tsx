@@ -80,8 +80,8 @@ export function HeroCarousel() {
       ))}
 
       {/* Content */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center px-4 max-w-4xl">
+      <div className="absolute inset-0 flex items-center justify-center pt-16">
+        <div className="text-center px-4 max-w-4xl mx-auto">
           <h1
             className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-wide mb-4 md:mb-6"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.3)" }}
