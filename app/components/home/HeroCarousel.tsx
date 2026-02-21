@@ -7,24 +7,24 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/solar-panels.jpg",
-    slogan: "RELIABLE ELECTRICAL & SOLAR SOLUTIONS",
-    subtext: "Certified contractors serving Gauteng and the Garden Route since 2001",
+    image: "/images/hero-image.webp",
+    slogan: "POWERING SOUTH AFRICAN HOMES & BUSINESSES SINCE 2001",
+    subtext: "Licensed electrical contractors and accredited solar installers serving Gauteng and the Garden Route.",
   },
   {
     image: "/images/solar-installations.jpg",
-    slogan: "FREEDOM FROM LOAD SHEDDING",
-    subtext: "Premium solar installations for energy independence and long-term savings",
+    slogan: "STOP PAYING FOR POWER YOU CAN'T COUNT ON",
+    subtext: "Go solar and take control. Our installations pay for themselves while the grid lets you down.",
   },
   {
     image: "/images/clubhouse.webp",
-    slogan: "CERTIFIED. COMPLIANT. REGISTERED.",
-    subtext: "Every installation completed to the highest safety standards",
+    slogan: "EVERY JOB SIGNED OFF. EVERY CERTIFICATE ISSUED.",
+    subtext: "Full compliance with SANS 10142, registered with the Department of Labour. No shortcuts, no callbacks.",
   },
   {
     image: "/images/robberg.jpg",
-    slogan: "YOUR GO2 IN ELECTRICAL",
-    subtext: "Over two decades of trusted electrical expertise across South Africa",
+    slogan: "GO2 ELECTRICAL. THE NAME BEHIND THE METER.",
+    subtext: "Two decades. Two regions. One standard. Done right the first time.",
   },
 ];
 
