@@ -30,13 +30,13 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 const serviceImages: Record<string, string> = {
-  "maintenance-repairs": "/images/solar-installations.jpg",
-  "electrical-construction": "/images/clubhouse.webp",
-  "certificate-of-compliance": "/images/solar-panels.jpg",
-  "revamp-renovate": "/images/robberg.jpg",
-  "solar-backup-power": "/images/solar-panels.jpg",
-  "conserving-energy": "/images/solar-installations.jpg",
-  "maintenance-contracts": "/images/clubhouse.webp",
+  "maintenance-repairs": "/images/services/01_maintenance_and_repairs.png",
+  "electrical-construction": "/images/services/02_electrical_construction.png",
+  "certificate-of-compliance": "/images/services/03_electrical_compliance_certificate.png",
+  "revamp-renovate": "/images/services/04_revamp_and_renovate.png",
+  "solar-backup-power": "/images/services/05_solar_backup_power.png",
+  "conserving-energy": "/images/services/06_conserving_energy.png",
+  "maintenance-contracts": "/images/services/07_maintenance_contracts.png",
 };
 
 export default function ServicesPage() {
