@@ -35,7 +35,7 @@ export function SolarAuthority() {
           <div className="relative max-w-3xl mx-auto mb-10">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/solar-panels.jpg"
+                src="/images/solar-install.jpg"
                 alt="Solar panel installation by Elliot Electrical"
                 fill
                 className="object-cover"
