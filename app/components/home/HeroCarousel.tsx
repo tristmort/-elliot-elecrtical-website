@@ -107,7 +107,7 @@ export function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative w-full aspect-[16/9] max-h-[85vh] min-h-[500px] overflow-hidden">
+    <section className="relative w-full min-h-screen sm:min-h-[400px] sm:aspect-[16/9] sm:max-h-[85vh] md:min-h-[500px] overflow-hidden">
       {/* Background images — cycle through ALL photos */}
       {allImages.map((src, i) => (
         <div
@@ -155,12 +155,12 @@ export function HeroCarousel() {
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeSlideUp"
             style={{ animationDelay: "300ms" }}
           >
-            <Link href="/quote" className="btn-primary text-base px-10 py-4">
+            <Link href="/quote" className="btn-primary text-base px-6 sm:px-10 py-3.5 sm:py-4">
               Get a Free Quote
             </Link>
             <Link
               href="/services/solar-backup-power"
-              className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
+              className="inline-flex items-center justify-center px-6 sm:px-10 py-3.5 sm:py-4 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
             >
               Solar Solutions
             </Link>
