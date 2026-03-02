@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
@@ -80,11 +79,6 @@ export function HeroCarousel() {
 
   const nextSlide = useCallback(
     () => goToSlide((currentSlide + 1) % slides.length),
-    [currentSlide, goToSlide]
-  );
-
-  const prevSlide = useCallback(
-    () => goToSlide((currentSlide - 1 + slides.length) % slides.length),
     [currentSlide, goToSlide]
   );
 
@@ -183,22 +177,6 @@ export function HeroCarousel() {
           </div>
         </div>
       </div>
-
-      {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/25 transition-all"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/25 transition-all"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={24} />
-      </button>
 
       {/* Dots — represent text slides */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
