@@ -42,7 +42,7 @@ export function CTASection() {
                 <a
                   key={branch.label}
                   href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                  className="font-heading font-bold text-xl sm:text-2xl text-white hover:text-accent transition-colors flex items-center gap-2"
+                  className="font-heading font-bold text-xl sm:text-2xl text-white hover:text-accent transition-colors flex items-center gap-2 whitespace-nowrap"
                 >
                   {branch.phone}
                   <span className="text-white/40 font-normal text-base">— {branch.label}</span>

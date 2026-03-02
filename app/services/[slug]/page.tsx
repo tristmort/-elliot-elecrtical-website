@@ -96,20 +96,19 @@ export default function ServiceDetailPage({
             >
               Get a Quote
             </Link>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Phone size={14} className="text-primary flex-shrink-0" />
-              {company.phones.map((branch, i) => (
-                <span key={branch.label} className="flex items-center gap-1">
-                  {i > 0 && <span className="text-gray-300">|</span>}
+              <div className="flex flex-col sm:flex-row sm:gap-3 gap-0.5">
+                {company.phones.map((branch) => (
                   <a
+                    key={branch.label}
                     href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                    className="text-primary font-heading font-bold text-sm hover:text-accent transition-colors"
+                    className="text-primary font-heading font-bold text-sm hover:text-accent transition-colors whitespace-nowrap"
                   >
-                    {branch.phone}
+                    {branch.phone} <span className="text-muted-text font-normal text-xs">— {branch.label}</span>
                   </a>
-                  <span className="text-muted-text text-xs">— {branch.label}</span>
-                </span>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -239,7 +238,7 @@ export default function ServiceDetailPage({
                             <a
                               key={branch.label}
                               href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                              className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors"
+                              className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors whitespace-nowrap"
                             >
                               {branch.phone}
                               <span className="text-muted-text">— {branch.label}</span>

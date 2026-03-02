@@ -199,7 +199,7 @@ export default function AreaBookingPage({
                       <a
                         key={branch.label}
                         href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                        className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors"
+                        className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors whitespace-nowrap"
                       >
                         <span className="font-heading font-bold text-sm">{branch.phone}</span>
                         <span className="text-muted-text text-xs">— {branch.label}</span>

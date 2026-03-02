@@ -42,20 +42,19 @@ export default function ContactPage() {
       {/* Quick Contact Bar */}
       <section className="bg-accent text-white py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-6">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <Phone size={16} className="flex-shrink-0" />
-            {company.phones.map((branch, i) => (
-              <span key={branch.label} className="flex items-center gap-1">
-                {i > 0 && <span className="text-white/30 mx-1">|</span>}
+            <div className="flex flex-col sm:flex-row sm:gap-4 gap-0.5">
+              {company.phones.map((branch) => (
                 <a
+                  key={branch.label}
                   href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                  className="font-heading font-bold text-sm hover:text-white/80 transition-colors"
+                  className="font-heading font-bold text-sm hover:text-white/80 transition-colors whitespace-nowrap"
                 >
-                  {branch.phone}
+                  {branch.phone} <span className="text-white/60 font-normal text-xs">— {branch.label}</span>
                 </a>
-                <span className="text-white/60 text-xs">— {branch.label}</span>
-              </span>
-            ))}
+              ))}
+            </div>
           </div>
           <span className="hidden sm:block text-white/30">|</span>
           <a
@@ -245,7 +244,7 @@ export default function ContactPage() {
                               <a
                                 key={branch.label}
                                 href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                                className="flex items-center gap-2 hover:text-accent transition-colors"
+                                className="flex items-center gap-2 hover:text-accent transition-colors whitespace-nowrap"
                               >
                                 <span className="font-heading font-bold text-sm">{branch.phone}</span>
                                 <span className="text-white/40 text-xs">— {branch.label}</span>

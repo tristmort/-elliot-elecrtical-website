@@ -88,7 +88,7 @@ export function Footer() {
                       <a
                         key={branch.label}
                         href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
-                        className="flex items-center gap-2 hover:text-accent transition-colors"
+                        className="flex items-center gap-2 hover:text-accent transition-colors whitespace-nowrap"
                       >
                         {branch.phone}
                         <span className="text-white/40">—</span>
