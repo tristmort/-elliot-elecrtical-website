@@ -192,15 +192,21 @@ export default function AreaBookingPage({
                 Or Contact Us Directly
               </h3>
               <div className="flex flex-col sm:flex-row justify-center gap-8">
-                <a
-                  href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-                  className="flex items-center gap-3 text-dark-text hover:text-accent transition-colors"
-                >
-                  <Phone size={20} className="text-accent" />
-                  <span className="font-heading font-bold text-sm">
-                    {company.phone}
-                  </span>
-                </a>
+                <div className="flex items-start gap-3">
+                  <Phone size={20} className="text-accent flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    {company.phones.map((branch) => (
+                      <a
+                        key={branch.label}
+                        href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                        className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors"
+                      >
+                        <span className="font-heading font-bold text-sm">{branch.phone}</span>
+                        <span className="text-muted-text text-xs">— {branch.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
                 <a
                   href={`mailto:${company.email}`}
                   className="flex items-center gap-3 text-dark-text hover:text-accent transition-colors"

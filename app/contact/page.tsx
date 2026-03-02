@@ -42,13 +42,21 @@ export default function ContactPage() {
       {/* Quick Contact Bar */}
       <section className="bg-accent text-white py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a
-            href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-            className="flex items-center gap-2 font-heading font-bold text-sm hover:text-white/80 transition-colors"
-          >
-            <Phone size={16} />
-            {company.phone}
-          </a>
+          <div className="flex items-center gap-4">
+            <Phone size={16} className="flex-shrink-0" />
+            {company.phones.map((branch, i) => (
+              <span key={branch.label} className="flex items-center gap-1">
+                {i > 0 && <span className="text-white/30 mx-1">|</span>}
+                <a
+                  href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                  className="font-heading font-bold text-sm hover:text-white/80 transition-colors"
+                >
+                  {branch.phone}
+                </a>
+                <span className="text-white/60 text-xs">— {branch.label}</span>
+              </span>
+            ))}
+          </div>
           <span className="hidden sm:block text-white/30">|</span>
           <a
             href={`mailto:${company.email}`}
@@ -217,32 +225,35 @@ export default function ContactPage() {
             {/* Contact Details */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right">
-                <div className="sticky top-28 space-y-6">
+                <div className="lg:sticky lg:top-28 space-y-6">
                   {/* Contact Card */}
                   <div className="p-8 rounded-2xl gradient-primary text-white">
                     <h3 className="font-heading font-bold text-lg uppercase tracking-wide mb-6">
                       Contact Details
                     </h3>
                     <div className="space-y-5">
-                      <a
-                        href={`tel:${company.phoneInternational.replace(
-                          /\s/g,
-                          ""
-                        )}`}
-                        className="flex items-center gap-4 text-white/80 hover:text-accent transition-colors"
-                      >
+                      <div className="flex items-start gap-4 text-white/80">
                         <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                           <Phone size={18} />
                         </div>
                         <div>
-                          <p className="text-xs text-white/50 uppercase tracking-wider">
+                          <p className="text-xs text-white/50 uppercase tracking-wider mb-1">
                             Phone
                           </p>
-                          <p className="font-heading font-bold text-sm">
-                            {company.phone}
-                          </p>
+                          <div className="space-y-1">
+                            {company.phones.map((branch) => (
+                              <a
+                                key={branch.label}
+                                href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                                className="flex items-center gap-2 hover:text-accent transition-colors"
+                              >
+                                <span className="font-heading font-bold text-sm">{branch.phone}</span>
+                                <span className="text-white/40 text-xs">— {branch.label}</span>
+                              </a>
+                            ))}
+                          </div>
                         </div>
-                      </a>
+                      </div>
 
                       <a
                         href={`mailto:${company.email}`}

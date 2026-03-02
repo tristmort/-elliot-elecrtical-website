@@ -58,13 +58,21 @@ function QuoteFormInner() {
           <p className="text-sm font-heading font-medium">
             Prefer to call?
           </p>
-          <a
-            href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-            className="flex items-center gap-2 font-heading font-bold text-sm hover:text-white/80 transition-colors"
-          >
-            <Phone size={16} />
-            {company.phone}
-          </a>
+          <div className="flex items-center gap-4">
+            <Phone size={16} className="flex-shrink-0" />
+            {company.phones.map((branch, i) => (
+              <span key={branch.label} className="flex items-center gap-1">
+                {i > 0 && <span className="text-white/30 mx-1">|</span>}
+                <a
+                  href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                  className="font-heading font-bold text-sm hover:text-white/80 transition-colors"
+                >
+                  {branch.phone}
+                </a>
+                <span className="text-white/60 text-xs">— {branch.label}</span>
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -265,7 +273,7 @@ function QuoteFormInner() {
             {/* Sidebar */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right">
-                <div className="sticky top-28 space-y-6">
+                <div className="lg:sticky lg:top-28 space-y-6">
                   {/* Why Choose Us */}
                   <div className="p-8 rounded-2xl gradient-primary text-white">
                     <h3 className="font-heading font-bold text-lg uppercase tracking-wide mb-6">
@@ -295,17 +303,22 @@ function QuoteFormInner() {
                     <h3 className="font-heading font-bold text-base text-primary uppercase tracking-wide mb-4">
                       Contact Us Directly
                     </h3>
-                    <div className="space-y-4">
-                      <a
-                        href={`tel:${company.phoneInternational.replace(
-                          /\s/g,
-                          ""
-                        )}`}
-                        className="flex items-center gap-3 text-dark-text hover:text-accent transition-colors text-sm"
-                      >
-                        <Phone size={16} className="text-accent" />
-                        {company.phone}
-                      </a>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3 text-sm">
+                        <Phone size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                        <div className="space-y-1.5">
+                          {company.phones.map((branch) => (
+                            <a
+                              key={branch.label}
+                              href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                              className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors"
+                            >
+                              {branch.phone}
+                              <span className="text-muted-text">— {branch.label}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                       <a
                         href={`mailto:${company.email}`}
                         className="flex items-center gap-3 text-dark-text hover:text-accent transition-colors text-sm"

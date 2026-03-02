@@ -96,13 +96,21 @@ export default function ServiceDetailPage({
             >
               Get a Quote
             </Link>
-            <a
-              href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 text-primary font-heading font-bold text-sm"
-            >
-              <Phone size={14} />
-              {company.phone}
-            </a>
+            <div className="flex items-center gap-3">
+              <Phone size={14} className="text-primary flex-shrink-0" />
+              {company.phones.map((branch, i) => (
+                <span key={branch.label} className="flex items-center gap-1">
+                  {i > 0 && <span className="text-gray-300">|</span>}
+                  <a
+                    href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                    className="text-primary font-heading font-bold text-sm hover:text-accent transition-colors"
+                  >
+                    {branch.phone}
+                  </a>
+                  <span className="text-muted-text text-xs">— {branch.label}</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -200,7 +208,7 @@ export default function ServiceDetailPage({
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <ScrollReveal direction="right">
-                <div className="sticky top-28 space-y-6">
+                <div className="lg:sticky lg:top-28 space-y-6">
                   {/* Quote Card */}
                   <div className="p-8 rounded-2xl gradient-primary text-white">
                     <h3 className="font-heading font-bold text-lg uppercase tracking-wide mb-3">
@@ -223,17 +231,22 @@ export default function ServiceDetailPage({
                     <h3 className="font-heading font-bold text-base text-primary uppercase tracking-wide mb-4">
                       Contact Us Directly
                     </h3>
-                    <div className="space-y-4">
-                      <a
-                        href={`tel:${company.phoneInternational.replace(
-                          /\s/g,
-                          ""
-                        )}`}
-                        className="flex items-center gap-3 text-dark-text hover:text-accent transition-colors text-sm"
-                      >
-                        <Phone size={16} className="text-accent" />
-                        {company.phone}
-                      </a>
+                    <div className="space-y-1.5">
+                      <div className="flex items-start gap-3 text-sm">
+                        <Phone size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                        <div className="space-y-1.5">
+                          {company.phones.map((branch) => (
+                            <a
+                              key={branch.label}
+                              href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                              className="flex items-center gap-2 text-dark-text hover:text-accent transition-colors"
+                            >
+                              {branch.phone}
+                              <span className="text-muted-text">— {branch.label}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -261,13 +274,18 @@ export default function ServiceDetailPage({
               >
                 Request a Quote
               </Link>
-              <a
-                href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
-              >
-                <Phone size={16} />
-                Call {company.phone}
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                {company.phones.map((branch) => (
+                  <a
+                    key={branch.label}
+                    href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
+                  >
+                    <Phone size={16} />
+                    {branch.phone} — {branch.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>

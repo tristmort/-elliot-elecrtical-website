@@ -16,6 +16,12 @@ export interface Testimonial {
   text: string;
 }
 
+export interface BranchPhone {
+  label: string;
+  phone: string;
+  phoneInternational: string;
+}
+
 export interface CompanyInfo {
   name: string;
   tagline: string;
@@ -23,6 +29,7 @@ export interface CompanyInfo {
   owner: string;
   phone: string;
   phoneInternational: string;
+  phones: BranchPhone[];
   email: string;
   address: string;
   areas: string[];

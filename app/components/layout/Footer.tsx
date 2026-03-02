@@ -81,13 +81,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a
-                  href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-                  className="flex items-center gap-3 text-white/70 hover:text-accent transition-colors text-sm"
-                >
-                  <Phone size={16} className="flex-shrink-0" />
-                  {company.phone}
-                </a>
+                <div className="flex items-start gap-3 text-white/70 text-sm">
+                  <Phone size={16} className="flex-shrink-0 mt-0.5" />
+                  <div className="space-y-1.5">
+                    {company.phones.map((branch) => (
+                      <a
+                        key={branch.label}
+                        href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                        className="flex items-center gap-2 hover:text-accent transition-colors"
+                      >
+                        {branch.phone}
+                        <span className="text-white/40">—</span>
+                        <span className="text-white/50">{branch.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </li>
               <li>
                 <a

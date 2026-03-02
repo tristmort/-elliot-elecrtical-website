@@ -33,7 +33,7 @@ export function Navbar() {
               width={320}
               height={100}
               className={`transition-all duration-300 ${
-                isScrolled ? "h-16 w-auto" : "h-28 w-auto"
+                isScrolled ? "h-12 sm:h-16 w-auto" : "h-20 sm:h-28 w-auto"
               }`}
               priority
             />
@@ -53,13 +53,21 @@ export function Navbar() {
             <Link href={ctaNavItem.href} className="btn-primary">
               {ctaNavItem.label}
             </Link>
-            <a
-              href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 text-primary font-heading font-bold text-sm"
-            >
-              <Phone size={16} />
-              {company.phone}
-            </a>
+            <div className="flex items-start gap-2 text-primary font-heading font-bold text-xs">
+              <Phone size={14} className="mt-0.5 flex-shrink-0" />
+              <div className="flex flex-col gap-0.5">
+                {company.phones.map((branch) => (
+                  <a
+                    key={branch.label}
+                    href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                    className="flex items-center gap-1.5 hover:text-accent transition-colors whitespace-nowrap"
+                  >
+                    {branch.phone}
+                    <span className="text-muted-text font-medium">— {branch.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Hamburger */}

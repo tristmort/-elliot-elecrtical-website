@@ -23,13 +23,13 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link
               href="/quote"
-              className="btn-primary text-base px-12 py-4"
+              className="btn-primary text-base px-8 sm:px-12 py-3.5 sm:py-4"
             >
               Get Your Free Quote
             </Link>
             <a
               href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-              className="inline-flex items-center justify-center gap-2 px-12 py-4 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
+              className="inline-flex items-center justify-center gap-2 px-8 sm:px-12 py-3.5 sm:py-4 border-2 border-white text-white font-heading font-bold text-sm uppercase tracking-wider rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
             >
               <Phone size={18} />
               Call Us Now
@@ -37,13 +37,19 @@ export function CTASection() {
           </div>
 
           <div className="text-white/60">
-            <a
-              href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}
-              className="font-heading font-bold text-2xl text-white hover:text-accent transition-colors"
-            >
-              {company.phone}
-            </a>
-            <p className="text-sm mt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+              {company.phones.map((branch) => (
+                <a
+                  key={branch.label}
+                  href={`tel:${branch.phoneInternational.replace(/\s/g, "")}`}
+                  className="font-heading font-bold text-xl sm:text-2xl text-white hover:text-accent transition-colors flex items-center gap-2"
+                >
+                  {branch.phone}
+                  <span className="text-white/40 font-normal text-base">— {branch.label}</span>
+                </a>
+              ))}
+            </div>
+            <p className="text-sm mt-3">
               <a
                 href={`mailto:${company.email}`}
                 className="hover:text-accent transition-colors"
