@@ -61,7 +61,7 @@ function QuoteFormInner() {
             Request a Quote
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Get a free, no-obligation quote for your electrical or solar needs.
+            Get a quote for your electrical or solar needs.
             Our certified team will respond within 24 hours.
           </p>
         </div>
@@ -296,7 +296,7 @@ function QuoteFormInner() {
                     </h3>
                     <div className="space-y-4">
                       {[
-                        "Free, no-obligation quotes",
+                        "No-obligation quotes",
                         "Certified & registered electricians",
                         "Over 25 years of experience",
                         "COC certificates issued",

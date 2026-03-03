@@ -150,7 +150,7 @@ export function HeroCarousel() {
             style={{ animationDelay: "300ms" }}
           >
             <Link href="/quote" className="btn-primary text-base px-6 sm:px-10 py-3.5 sm:py-4">
-              Get a Free Quote
+              Get a Quote
             </Link>
             <Link
               href="/services/solar-backup-power"

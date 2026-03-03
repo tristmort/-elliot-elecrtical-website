@@ -344,8 +344,7 @@ export default function ContactPage() {
                       </h3>
                     </div>
                     <p className="text-muted-text text-sm">
-                      Emergency services available 24/7 for maintenance contract
-                      clients. Standard business hours for general enquiries.
+                      Standard business hours for general enquiries.
                     </p>
                   </div>
                 </div>

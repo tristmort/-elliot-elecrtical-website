@@ -14,7 +14,7 @@ export const company: CompanyInfo = {
       phoneInternational: "+27 66 489 7335",
     },
     {
-      label: "Plett",
+      label: "Garden Route",
       phone: "082 573 7098",
       phoneInternational: "+27 82 573 7098",
     },

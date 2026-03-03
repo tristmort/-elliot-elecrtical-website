@@ -16,7 +16,7 @@ export function CTASection() {
             Ready for Reliable Power?
           </h2>
           <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            Get a free, no-obligation quote for your electrical or solar needs.
+            Get a quote for your electrical or solar needs.
             Our certified team is ready to help.
           </p>
 
@@ -25,7 +25,7 @@ export function CTASection() {
               href="/quote"
               className="btn-primary text-base px-8 sm:px-12 py-3.5 sm:py-4"
             >
-              Get Your Free Quote
+              Get a Quote
             </Link>
             <a
               href={`tel:${company.phoneInternational.replace(/\s/g, "")}`}

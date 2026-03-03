@@ -33,7 +33,7 @@ With over two decades of experience, our teams can quickly identify root causes 
 
 Elliot Electrical handles specialised construction related to designing, installing, and maintaining electrical systems during building assembly or reconstruction. This includes electric wiring through cable lines, current leads, and interior wiring installation.
 
-Our experienced teams work closely with builders, architects, and project managers to ensure electrical systems are installed correctly the first time, meeting all compliance requirements.`,
+Our experienced teams work closely with builders, architects, interior decorators and project managers to ensure electrical systems are installed correctly the first time, meeting all compliance requirements.`,
     bulletPoints: [
       "New Building Electrical Installations",
       "Wiring & Cable Management",
@@ -60,17 +60,11 @@ Our experienced teams work closely with builders, architects, and project manage
       "Electrical compliance certification for all installations and existing properties.",
     fullDescription: `Elliot Electrical can issue a certificate on all installations undertaken by us as well as certification of any existing installation, provided that we conduct the inspection ourselves.
 
-Certificates of Compliance are mandated continuously and should be renewed every 24 months or following any modifications to the electrical system.
-
-Our process involves a thorough inspection and compliance check. If the installation is compliant, certification is issued. If not, a detailed defect report is provided along with repair estimates, so you know exactly what needs to be addressed.
-
-We also cover electric fencing certification — systems altered after October 1, 2012 require proper certification.`,
+Our process involves a thorough inspection and compliance check. If the installation is compliant, certification is issued. If not, a detailed defect report is provided along with repair estimates, so you know exactly what needs to be addressed.`,
     bulletPoints: [
       "Full Electrical Inspections",
       "Certificate of Compliance (COC) Issuance",
       "Defect Reports & Repair Estimates",
-      "Electric Fencing Certification",
-      "24-Month Renewal Compliance",
     ],
     areas: [
       "Office Buildings",
@@ -119,7 +113,7 @@ Solar power eliminates the impact of load shedding, provides energy self-suffici
       "Battery Backup Systems",
       "Hybrid Solar Solutions",
       "Load Shedding Protection",
-      "Free Consultation & Quotes",
+      "Consultation & Quotes",
       "Warranty-Backed Installations",
     ],
     icon: "Sun",
@@ -134,42 +128,12 @@ Solar power eliminates the impact of load shedding, provides energy self-suffici
 
 Elliot Electrical provides expert guidance and installation services to help you save significantly on your electricity bills through proven energy conservation methods.
 
-Key areas include geyser optimisation (which accounts for up to 40% of household consumption), where heat pumps can reduce consumption by 65% and solar geysers by 60%. LED lighting upgrades can reduce lighting consumption by up to 90% — for example, converting 12 downlights from 600W to just 60W.`,
+Heat pumps can reduce consumption by 65% and solar geysers by 60%. LED lighting upgrades can reduce lighting consumption by up to 90% — for example, converting 12 downlights from 600W to just 60W.`,
     bulletPoints: [
-      "Geyser Optimisation (Heat Pumps & Solar Geysers)",
       "LED Lighting Conversions (up to 90% savings)",
-      "Air Conditioning Management",
-      "Appliance Monitoring & Assessment",
       "Timer Installations",
       "Pre-Paid Metering Solutions",
     ],
     icon: "Leaf",
-  },
-  {
-    id: "7",
-    slug: "maintenance-contracts",
-    title: "Maintenance Contracts",
-    shortDescription:
-      "Monthly electrical maintenance and inspection for proactive property care.",
-    fullDescription: `You will have the top electrical contractors looking after your property's electrics on a monthly basis. Our proactive inspection approach targets high-risk areas to prevent emergency situations before they arise.
-
-We offer two contract tiers to suit your needs:
-
-**Standard Contract — R139/month (excl. VAT)**
-Includes bi-monthly inspections, proactive fault checks, high-risk area assessments, discounted labour rates, and competitive parts pricing.
-
-**Executive Contract — R385/month (excl. VAT)**
-Includes everything in the Standard contract plus annual compliance certification, 24/7 availability with no call-out fees, and an initial R950 compliance assessment.
-
-Both contracts require automatic debit order payment.`,
-    bulletPoints: [
-      "Bi-Monthly Inspections",
-      "Proactive Fault Detection",
-      "High-Risk Area Assessments",
-      "Discounted Labour & Parts Rates",
-      "24/7 Emergency Availability (Executive)",
-      "Annual Compliance Certification (Executive)",
-    ],
-    icon: "FileCheck",
   },
 ];

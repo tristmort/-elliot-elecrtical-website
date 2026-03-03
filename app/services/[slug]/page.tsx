@@ -86,7 +86,7 @@ export default function ServiceDetailPage({
       <section className="bg-accent/5 border-b border-accent/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-dark-text text-sm font-medium">
-            Need help with {service.title.toLowerCase()}? Get a free quote
+            Need help with {service.title.toLowerCase()}? Get a quote
             today.
           </p>
           <div className="flex items-center gap-4">
@@ -211,10 +211,10 @@ export default function ServiceDetailPage({
                   {/* Quote Card */}
                   <div className="p-8 rounded-2xl gradient-primary text-white">
                     <h3 className="font-heading font-bold text-lg uppercase tracking-wide mb-3">
-                      Get a Free Quote
+                      Get a Quote
                     </h3>
                     <p className="text-white/80 text-sm leading-relaxed mb-6">
-                      Request a free, no-obligation quote for{" "}
+                      Request a quote for{" "}
                       {service.title.toLowerCase()} services.
                     </p>
                     <Link

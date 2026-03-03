@@ -5,7 +5,7 @@ const steps = [
   {
     icon: <Phone size={28} />,
     title: "Contact Us",
-    description: "Get in touch for a free consultation and assessment of your electrical needs.",
+    description: "Get in touch for a consultation and assessment of your electrical needs.",
   },
   {
     icon: <ClipboardCheck size={28} />,

@@ -8,7 +8,6 @@ import {
   Sun,
   Leaf,
   RefreshCw,
-  FileCheck,
 } from "lucide-react";
 import { services } from "@/lib/data/services";
 import { ScrollReveal } from "@/app/components/animations/ScrollReveal";
@@ -16,7 +15,7 @@ import { ScrollReveal } from "@/app/components/animations/ScrollReveal";
 export const metadata: Metadata = {
   title: "Our Services | Elliot Electrical",
   description:
-    "Professional electrical services including maintenance, construction, solar installations, compliance certificates, energy conservation and maintenance contracts.",
+    "Professional electrical services including maintenance, construction, solar installations, compliance certificates and energy conservation.",
 };
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -26,7 +25,6 @@ const iconMap: Record<string, React.ReactNode> = {
   Sun: <Sun size={40} className="text-white" />,
   Leaf: <Leaf size={40} className="text-white" />,
   RefreshCw: <RefreshCw size={40} className="text-white" />,
-  FileCheck: <FileCheck size={40} className="text-white" />,
 };
 
 const serviceImages: Record<string, string> = {
@@ -36,7 +34,6 @@ const serviceImages: Record<string, string> = {
   "revamp-renovate": "/images/services/04_revamp_and_renovate.png",
   "solar-backup-power": "/images/services/05_solar_backup_power.png",
   "conserving-energy": "/images/services/06_conserving_energy.png",
-  "maintenance-contracts": "/images/services/07_maintenance_contracts.png",
 };
 
 export default function ServicesPage() {
@@ -108,7 +105,7 @@ export default function ServicesPage() {
               Need Expert Electrical Help?
             </h2>
             <p className="text-muted-text text-base mb-8">
-              Get a free, no-obligation quote for any of our services. Our
+              Get a quote for any of our services. Our
               certified team is ready to assist.
             </p>
             <Link href="/quote" className="btn-primary">
