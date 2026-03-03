@@ -23,6 +23,7 @@ function QuoteFormInner() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (preselectedService) {
@@ -30,11 +31,25 @@ function QuoteFormInner() {
     }
   }, [preselectedService]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to email/CRM backend
-    console.log("Quote form submitted:", formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try calling us directly.");
+      }
+    } catch {
+      alert("Something went wrong. Please try calling us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -260,9 +275,10 @@ function QuoteFormInner() {
 
                     <button
                       type="submit"
-                      className="btn-primary w-full sm:w-auto text-base px-12"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full sm:w-auto text-base px-12 disabled:opacity-50"
                     >
-                      Submit Quote Request
+                      {isSubmitting ? "Sending..." : "Submit Quote Request"}
                     </button>
                   </form>
                 )}

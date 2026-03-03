@@ -16,12 +16,27 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to email/CRM backend
-    console.log("Contact form submitted:", formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try calling us directly.");
+      }
+    } catch {
+      alert("Something went wrong. Please try calling us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -212,9 +227,10 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="btn-primary w-full sm:w-auto"
+                      disabled={isSubmitting}
+                      className="btn-primary w-full sm:w-auto disabled:opacity-50"
                     >
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}

@@ -24,12 +24,27 @@ export default function AreaBookingPage({
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to email/CRM backend
-    console.log("Booking form submitted:", { region: area.name, ...formData });
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, region: area.name }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try calling us directly.");
+      }
+    } catch {
+      alert("Something went wrong. Please try calling us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -178,8 +193,12 @@ export default function AreaBookingPage({
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full py-4 text-base">
-                  Submit Booking Request
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full py-4 text-base disabled:opacity-50"
+                >
+                  {isSubmitting ? "Sending..." : "Submit Booking Request"}
                 </button>
               </form>
             )}
