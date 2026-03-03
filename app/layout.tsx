@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Elliot Electrical | Your Go2 in Electrical | Johannesburg & Garden Route",
+  title: "Elliot Electrical | Trusted Electricians in Gauteng & Garden Route",
   description:
-    "Elliot Electrical — certified electrical contractors serving Johannesburg and the Garden Route since 2001. Solar installations, electrical construction, compliance certificates, maintenance & repairs.",
+    "Certified electrical contractors serving Gauteng and the Garden Route since 2001. Solar, construction, compliance & maintenance.",
   keywords: [
     "electrician Johannesburg",
     "solar installation Gauteng",
@@ -32,11 +32,27 @@ export const metadata: Metadata = {
     "Elliot Electrical",
   ],
   openGraph: {
-    title: "Elliot Electrical | Your Go2 in Electrical",
+    title: "Elliot Electrical | Trusted Electricians in Gauteng & Garden Route",
     description:
-      "Certified electrical contractors serving Johannesburg and the Garden Route since 2001. Solar, construction, compliance & maintenance.",
+      "Certified electrical contractors serving Gauteng and the Garden Route since 2001. Solar, construction, compliance & maintenance.",
+    url: "https://elliotelectrical.co.za/",
     type: "website",
     locale: "en_ZA",
+    images: [
+      {
+        url: "https://elliotelectrical.co.za/elliot-logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Elliot Electrical Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elliot Electrical | Trusted Electricians in Gauteng & Garden Route",
+    description:
+      "Certified electrical contractors serving Gauteng and the Garden Route since 2001. Solar, construction, compliance & maintenance.",
+    images: ["https://elliotelectrical.co.za/elliot-logo.png"],
   },
 };
 
@@ -51,7 +67,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${inter.variable} font-body antialiased`}
       >
         <Navbar />
-        <main className="pt-40">{children}</main>
+        <main className="pt-28 sm:pt-40">{children}</main>
         <Footer />
       </body>
     </html>
