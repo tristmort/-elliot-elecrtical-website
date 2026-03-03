@@ -136,6 +136,9 @@ export function Footer() {
               reserved.
             </p>
             <p className="text-white/40 text-xs">
+              Terms and Conditions Apply
+            </p>
+            <p className="text-white/40 text-xs">
               Certified, Compliant & Registered Electrical Contractors
             </p>
           </div>
