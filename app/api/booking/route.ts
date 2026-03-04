@@ -8,8 +8,8 @@ export async function POST(request: Request) {
     const { name, number, email, message, region } = await request.json();
 
     await resend.emails.send({
-      from: "Elliot Electrical Website <onboarding@resend.dev>",
-      to: "info@elliotelectrical.co.za",
+      from: "Elliot Electrical Website <noreply@elliotelectrical.co.za>",
+      to: ["kevin@elliotelectrical.co.za", "chad@elliotelectrical.co.za"],
       subject: `New Booking Request: ${region || "Area Service"}`,
       replyTo: email,
       html: `
